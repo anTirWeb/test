@@ -5,7 +5,6 @@ class FrmProSettingsController {
 	public static function license_box() {
 		$edd_update = new FrmProEddController();
 		$a = FrmAppHelper::simple_get( 't', 'sanitize_title', 'general_settings' );
-		remove_action( 'frm_before_settings', 'FrmSettingsController::license_box' );
 		$show_creds_form = self::show_license_form();
 		include( FrmProAppHelper::plugin_path() . '/classes/views/settings/license_box.php' );
 	}

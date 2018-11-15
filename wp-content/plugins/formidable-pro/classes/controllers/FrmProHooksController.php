@@ -14,6 +14,8 @@ class FrmProHooksController {
 			add_action('frm_before_settings', 'FrmProSettingsController::license_box', 1);
 		}
 
+		add_action( 'admin_head', 'FrmProAppController::remove_upsells' );
+
 		global $frm_vars;
 		if ( ! $frm_vars['pro_is_authorized'] ) {
 			return;
