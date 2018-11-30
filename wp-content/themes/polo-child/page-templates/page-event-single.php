@@ -15,6 +15,7 @@
         $site_fees = get_field('site_fees');
         $has_event_schedule = get_field('add_event_schedule');
         $schedule = get_field('event_schedule');
+        $fb_event = get_field('facebook_event_url');
         $meal_info = get_field('meal_information');
         $pre_reg = get_field('pre_reg_reservations');
         $volunteer = get_field('volunteer_opportunities');
@@ -64,6 +65,13 @@ $preloader_data = polo_theme_preloader();
 					
 					    <p>&nbsp;</p>
 					    <p><strong><?php echo $es_message; ?></strong></p>
+					    <?php
+					    if( $fb_event ) {
+					        ?>
+					        <p><a href="<?php echo $fb_event; ?>" target="_blank"><i class="fa fa-facebook-square" style="color: #23527c; font-size: 14pt;"></i> See this event on Facebook</a></p>
+					        <?php
+					    }
+					    ?>
 					    <div class="event-template-default">
 					    <?php
 					    
